@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { GENDER, IProfile, ROLE } from '../app.constant';
-import { AuthService } from '../core/auth.service';
+
+import { GENDER, IProfile } from '../app.constant';
 import { ProfileService } from './core/profile.service';
 
 @Component({

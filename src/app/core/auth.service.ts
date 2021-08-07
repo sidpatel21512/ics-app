@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { apiUrl, IAccount, ROLE } from '../app.constant';
+
+import { apiUrl, IAccount } from '../app.constant';
 
 @Injectable({
   providedIn: 'root'

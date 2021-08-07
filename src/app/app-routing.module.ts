@@ -14,7 +14,7 @@ const routes: Routes = [
       loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
     }, {
       path: 'users',
-      // canActivate: [RoleGuard],
+      canActivate: [RoleGuard],
       loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
     }]
   },
