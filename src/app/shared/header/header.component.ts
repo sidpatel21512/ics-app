@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROLE } from 'src/app/app.constant';
 import { AuthService } from 'src/app/core/auth.service';
@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/core/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  @Input() public activelink: string | undefined;
 
   public role: ROLE;
   constructor(private router: Router, private auth: AuthService) {
