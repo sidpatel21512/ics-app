@@ -1,0 +1,5 @@
+<div class="tab">
+    <button class="tablinks active" (click)="navigateToUrl('profile')">Profile</button>
+    <button *ngIf="role === 'admin'" class="tablinks" (click)="navigateToUrl('users')">Users</button>
+    <button class="tablinks" (click)="logout()">Logout</button>
+</div>

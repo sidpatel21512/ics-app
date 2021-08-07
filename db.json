@@ -1,11 +1,75 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" },
-      { "id": 2, "title": "json-server", "author": "t1" },
-      { "id": 3, "title": "json-server1", "author": "t3" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "t1"
+    },
+    {
+      "id": 3,
+      "title": "json-server1",
+      "author": "t3"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "accounts": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "username": "one",
+      "password": "oneone",
+      "role": "user",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "username": "two",
+      "password": "twotwo",
+      "role": "user",
+      "userId": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Tony Stark",
+      "email": "tony@avengers.com",
+      "username": "admin",
+      "gender": "male"
+    },
+    {
+      "username": "one",
+      "name": "Captain America",
+      "email": "captain@avengers.com",
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Natasha",
+      "email": "natasha@avengers.com",
+      "username": "two",
+      "gender": "female"
+    }
+  ]
+}
