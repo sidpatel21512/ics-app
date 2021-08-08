@@ -37,7 +37,8 @@ export class ProfileComponent implements OnInit {
         username: this.profile?.username,
         name: this.getFiledValue('name'),
         email: this.getFiledValue('email'),
-        gender: this.getFiledValue('gender')
+        gender: this.getFiledValue('gender'),
+        role: this.profile?.role
       } as IProfile;
       this.profileService.updateProfile(body).subscribe(res => console.log('e:', res));
     }

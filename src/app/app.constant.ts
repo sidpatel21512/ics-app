@@ -1,5 +1,3 @@
-export const apiUrl = 'http://localhost:3000';
-
 export enum ROLE {
     ADMIN = 'admin',
     USER = 'user',
@@ -8,6 +6,11 @@ export enum ROLE {
 export enum GENDER {
     MALE = 'male',
     FEMALE = 'female',
+}
+
+export const Methods = {
+    Accounts: '/accounts',
+    Users: '/users'
 }
 
 export interface IAccount {
@@ -24,6 +27,7 @@ export interface IProfile {
     email: string;
     username: string;
     gender: GENDER;
+    role: ROLE;
 }
 
 export interface IUserDetails {

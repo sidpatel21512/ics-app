@@ -1,50 +1,51 @@
 {
-  "accounts": [
-    {
-      "username": "admin",
-      "password": "admin",
-      "role": "admin",
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "username": "one",
-      "password": "oneone",
-      "role": "user",
-      "userId": 2
-    },
-    {
-      "id": 3,
-      "username": "two",
-      "password": "twotwo",
-      "role": "user",
-      "userId": 3
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "name": "Tony Stark",
-      "email": "tony@avengers.com",
-      "username": "admin",
-      "role": "admin",
-      "gender": "male"
-    },
-    {
-      "username": "one",
-      "name": "Captain America",
-      "email": "captain@avengers.com",
-      "gender": "male",
-      "role": "user",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "name": "Natasha",
-      "email": "natasha@avengers.com",
-      "username": "two",
-      "role": "user",
-      "gender": "female"
-    }
-  ]
-}
+    "accounts": [
+      {
+        "id": 1,
+        "username": "admin",
+        "password": "admin",
+        "role": "admin",
+        "userId": 1
+      },
+      {
+        "id": 2,
+        "username": "one",
+        "password": "oneone",
+        "role": "user",
+        "userId": 2
+      },
+      {
+        "id": 3,
+        "username": "two",
+        "password": "twotwo",
+        "role": "user",
+        "userId": 3
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Tony Stark",
+        "email": "tony@avengers.com",
+        "username": "admin",
+        "role": "admin",
+        "gender": "male"
+      },
+      {
+        "username": "one",
+        "name": "Captain America",
+        "email": "captain@avengers.com",
+        "gender": "male",
+        "role": "user",
+        "id": 2
+      },
+      {
+        "id": 3,
+        "name": "Natasha",
+        "email": "natasha@avengers.com",
+        "username": "two",
+        "role": "user",
+        "gender": "female"
+      }
+    ]
+  }

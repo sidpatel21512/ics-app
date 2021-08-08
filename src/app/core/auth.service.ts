@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { apiUrl, IAccount } from '../app.constant';
+import { IAccount, Methods } from '../app.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +12,18 @@ export class AuthService {
   private session_key = 'session';
   private current_user_key = 'currentuser';
   private role_key = 'role';
+  private username_key = 'username';
   constructor(private http: HttpClient) {
   }
 
   public verifyLogin(username: string, password: string): Observable<boolean> {
-    return this.http.get<IAccount[]>(`${apiUrl}/accounts?username=${username}&passwrod=${password}`).pipe(
+    return this.http.get<IAccount[]>(`${Methods.Accounts}?username=${username}&passwrod=${password}`).pipe(
       tap(res => {
         if (res[0]) {
           this.role = res[0].role;
           this.currentUserId = res[0].userId.toString();
           this.session = 'true';
+          this.username = res[0].username;
         }
       }),
       map(res => res.length ? true : false)
@@ -29,13 +31,13 @@ export class AuthService {
   }
 
   public getAccountByUserId(userId: number): Observable<IAccount> {
-    return this.http.get<IAccount[]>(`${apiUrl}/accounts?userId=${userId}`).pipe(
+    return this.http.get<IAccount[]>(`${Methods.Accounts}?userId=${userId}`).pipe(
       map(res => res[0])
     );
   }
 
   public updateAccount(id: number, body: IAccount): Observable<IAccount> {
-    return this.http.put<IAccount>(`${apiUrl}/accounts/${id}`, body);
+    return this.http.put<IAccount>(`${Methods.Accounts}/${id}`, body);
   }
 
   public get session(): any {
@@ -62,9 +64,18 @@ export class AuthService {
     localStorage.setItem(this.role_key, value);
   }
 
+  public get username(): any {
+    return localStorage.getItem(this.username_key);
+  }
+
+  public set username(value: string) {
+    localStorage.setItem(this.username_key, value);
+  }
+
   public clearStorage(): void {
     localStorage.setItem(this.session_key, '');
     localStorage.setItem(this.current_user_key, '');
     localStorage.setItem(this.role_key, '');
+    localStorage.setItem(this.username_key, '');
   }
 }
