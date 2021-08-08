@@ -28,6 +28,16 @@ export class AuthService {
     );
   }
 
+  public getAccountByUserId(userId: number): Observable<IAccount> {
+    return this.http.get<IAccount[]>(`${apiUrl}/accounts?userId=${userId}`).pipe(
+      map(res => res[0])
+    );
+  }
+
+  public updateAccount(id: number, body: IAccount): Observable<IAccount> {
+    return this.http.put<IAccount>(`${apiUrl}/accounts/${id}`, body);
+  }
+
   public get session(): any {
     return localStorage.getItem(this.session_key);
   }

@@ -1,1 +1,45 @@
 <app-header [activelink]='"users"'></app-header>
+<table class="table table-striped" aria-describedby="tableTitle">
+    <thead>
+        <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Username</th>
+            <th scope="col" class="text-center">Email</th>
+            <th scope="col" class="text-center">User Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <button (click)="addNewUser()"
+                    [disabled]="newUser.username === '' || newUser.email=== '' || newUser.role === undefined">Add</button>
+            </td>
+            <td class="text-center">
+                <input type="text" [(ngModel)]=" newUser.username">
+            </td>
+            <td class="text-center"><input type="text" [(ngModel)]=" newUser.email"></td>
+            <td class="text-center"><input type="text" [(ngModel)]=" newUser.role"></td>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>
+                <ng-container *ngIf="user.isEdit; else nonedit">
+                    <button (click)="saveUserDetails(user)">Save</button>
+                    <button (click)="cancelEdit(user)">Cancel</button>
+                </ng-container>
+                <ng-template #nonedit>
+                    <button (click)="user.isEdit = true">Edit</button>
+                    <button (click)="deleteUser(user)">Delete</button>
+                </ng-template>
+            </td>
+            <td class="text-center">{{ user.username }}</td>
+            <ng-container *ngIf="!user.isEdit; else edit">
+                <td class="text-center">{{ user.email }}</td>
+                <td class="text-center">{{ user.role }}</td>
+            </ng-container>
+            <ng-template #edit>
+                <td class="text-center"><input type="text" [(ngModel)]="user.editEmail"></td>
+                <td class="text-center"><input type="text" [(ngModel)]="user.editRole"></td>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>

@@ -25,3 +25,29 @@ export interface IProfile {
     username: string;
     gender: GENDER;
 }
+
+export interface IUserDetails {
+    id: number;
+    username: string;
+    email: string;
+    role: ROLE;
+    name: string;
+    gender: GENDER;
+}
+
+export class UserDetails {
+    public isEdit = false;
+    public editEmail: string;
+    public editRole: ROLE;
+    constructor(
+        public readonly id: number,
+        public readonly username: string,
+        public readonly name: string,
+        public readonly gender: string,
+        public email: string,
+        public role: ROLE
+    ) {
+        this.editEmail = email;
+        this.editRole = role;
+    }
+}

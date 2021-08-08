@@ -1,5 +1,5 @@
 <div class="tab">
     <button class="tablinks" [ngClass]="{'active': activelink ==='profile'}" (click)="navigateToUrl('profile')">Profile</button>
     <button *ngIf="role === 'admin'" class="tablinks" [ngClass]="{'active': activelink ==='users'}" (click)="navigateToUrl('users')">Users</button>
-    <button class="tablinks" (click)="logout()">Logout</button>
+    <button class="tablinks" style="float: right;" (click)="logout()">Logout</button>
 </div>

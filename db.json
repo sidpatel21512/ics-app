@@ -1,34 +1,6 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 2,
-      "title": "json-server",
-      "author": "t1"
-    },
-    {
-      "id": 3,
-      "title": "json-server1",
-      "author": "t3"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "accounts": [
     {
-      "id": 1,
       "username": "admin",
       "password": "admin",
       "role": "admin",
@@ -55,6 +27,7 @@
       "name": "Tony Stark",
       "email": "tony@avengers.com",
       "username": "admin",
+      "role": "admin",
       "gender": "male"
     },
     {
@@ -62,6 +35,7 @@
       "name": "Captain America",
       "email": "captain@avengers.com",
       "gender": "male",
+      "role": "user",
       "id": 2
     },
     {
@@ -69,6 +43,7 @@
       "name": "Natasha",
       "email": "natasha@avengers.com",
       "username": "two",
+      "role": "user",
       "gender": "female"
     }
   ]
